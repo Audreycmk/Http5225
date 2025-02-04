@@ -51,12 +51,24 @@
     $person['web'] = 'http://audrey.com';
 
     echo 'Hello, ' . $person['first'];
-
     ?>
 
-    <a href="<?php echo 'mailto:audreycmk@gmail.com'; ?>">audreycmk@gmail.com</a>
     <br>
+
+    <?php 
+    echo "<a href='mailto:audreycmk@gmail.com'>audreycmk@gmail.com</a>"; 
+    ?>
+
+    <br>
+    
+    <a href="<?php echo 'mailto:audreycmk@gmail.com'; ?>">audreycmk@gmail.com</a>
+    
+    <br>
+    
     <a href="<?php echo 'https://google.com';?>">Google</a>
 
   </body>
 </html>
+
+<!-- echo "<a href='mailto:" . $users[$x]['email'] . "'>" . $users[$x]['email'] . "</a>"; -->
+ 
