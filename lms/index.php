@@ -25,19 +25,23 @@
         $schools = mysqli_query($connect, $query);
 
         foreach($schools as $school){
-           // echo "test"; //to see if its connected
-          //<div class="col-md-3"> means the screen split in 12 columns, each column takes up 3/12 colums, so 4 cards in a row 
-          // mb-5 means Margin-Bottom 5 (min 1-5 max)
-          // pt-1 means Padding Top 1 (little)
-          // m-5 means Margin all rounded
-          //echo '<div class="col-md-3"> 
-            
           echo '<div class="col-md-4">
                   <div class="card mb-4" style="">
                     <div class="card-body">
                       <h5 class="card-title">' . $school['Board'] . '</h5>
                       <span class="badge bg-primary">' . $school['School Type'] .'</span>
                       <span class="badge bg-success">' . $school['Language'] .'</span>
+                    </div>
+                    <div class="card-footer">
+                      <form action="updateschool.php" method="GET">
+                        <input type="hidden" name="boardNo" value="' . $school['Board No'] .'">
+                        <button type="submit" name="updateSchool" class="btn btn-sm btn-success">Edit</button>
+                      </form>
+
+                      <form action="deleteschool.php" method="GET">
+                        <input type="hidden" name="boardNo" value="' . $school['Board No'] . '">
+                        <button type="submit" name="deleteSchool" class=" btn btn-sm btn-danger">Delete</button>
+                      </form>
                     </div>
                   </div>
                 </div>';
@@ -46,6 +50,9 @@
     </div>
   </div>
 </div>
+
+
+
+
 </body>
 </html>
-         
