@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education, Salary & Loan Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Original+Surfer&family=Poiret+One&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <style>   
 
 /* Global Styling */
         body {
-            font-family: 'Lato', sans-serif; 
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+            font-family: "Lexend Deca", sans-serif;
+            background-color: #8fc2ff;
+            color: white;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
         /* Heading Styling */
         h2 {
-            font-size: 2.5em;
+            font-size: 50px;
+            font-family: "Original Surfer", sans-serif; 
             text-align: center;
-            background: linear-gradient(45deg, #6a11cb, #2575fc); /* Vibrant gradient */
-            -webkit-background-clip: text;
-            color: transparent;
-            margin: 20px 0;
-            padding: 10px;
-            animation: gradientAnimation 5s ease infinite;
-        }
+            color: white;
+            text-shadow: 5px 3px 5px #2e387d;
+            letter-spacing:3px;
+            margin-top: 30px;
+            padding: 30px;
+            }
 
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
@@ -35,31 +38,30 @@
 
         /* Filter Form Styling */
         form {
-            background: #fff;
-            padding: 25px;
-            margin: 20px auto;
-            max-width: 85%;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: #ffa077;
+            padding: 30px;
+            margin: 80px auto;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #2e387d;
             display: flex;
             /* flex-wrap: wrap; */
             gap: 15px;
         }
 
         form label {
-            font-size: 14px;
+            font-size: 16px;
             color: #555;
-            margin-bottom: 5px;
             width: 100%;
         }
 
         form select, form input {
             padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            font-size: 16px;
+            border: 2px solid #ff8652;
+            border-radius: 10px;
             width: 100%;
-            background: #f9f9f9;
+            background: ##fff;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -70,46 +72,53 @@
         }
 
         form button {
-            background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient button */
+            /* background: linear-gradient(45deg, #6a11cb, #2575fc);  */
+            background: #7284ff;
             color: #fff;
             padding: 10px;
-            border: none;
-            border-radius: 6px;
+            border: 2px solid #ff8652;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 14px;
-            width: 70%;
+            font-size: 18px;
+            font-weight: 600; 
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            width: 50%;
             transition: transform 0.2s ease, background 0.3s ease;
         }
 
         form button:hover {
-            background: linear-gradient(45deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+            /* background: linear-gradient(45deg, #2575fc, #6a11cb);  */
+            background: #2e387d;
             transform: translateY(-2px);
         }
 
         /* Table Styling */
         table {
-            width: 90%;
-            margin: 20px auto;
+            margin: 80px auto;
+            width: 75%;
             border-collapse: collapse;
             background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #2e387d;
             overflow: hidden;
         }
 
         th, td {
             padding: 12px 15px;
             text-align: left;
+            border: 2px solid #ffce4f;
         }
 
         th {
-            background: linear-gradient(45deg, #6a11cb, #2575fc); /* Gradient header */
+            background: #ffc327;
+            /* background: linear-gradient(45deg, #6a11cb, #2575fc);  */
             color: #fff;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         td {
-            font-size: 14px;
+            font-size: 16px;
             color: #555;
             border-bottom: 1px solid #eee;
         }
@@ -119,16 +128,16 @@
         }
 
         tr:hover {
-            background: rgba(106, 17, 203, 0.05); /* Subtle hover effect */
+            background: rgba(255, 244, 216, 0.5); /* Subtle hover effect */
         }
 
         /* Footer Styling */
         footer {
             text-align: center;
             padding: 20px;
-            background: #6a11cb;
+            /* background: #6a11cb; */
             color: #fff;
-            margin-top: 40px;
+            margin-top: 100px;
             font-size: 14px;
         }
 
@@ -171,7 +180,9 @@
     </style>
 </head>
 <body>
-    <h2>Education, Salary & Loan Data</h2>
+    <h2>Education, Salary & Loan Data <img src="./icon.png" alt="icon" style="width: 100px"></h2>
+    
+
 
     <!-- Loading Spinner -->
     <div id="loading-spinner" style="display: none; text-align: center; margin: 20px;">
@@ -179,8 +190,8 @@
     </div>
 
     <?php
-    // Database connection
-    $connect = new mysqli('localhost', 'u129225509_root', 'Root1ab2', 'u129225509_education_loan');
+    $connect = new mysqli('localhost', 'root', 'root', 'education_loan_2');
+    // $connect = new mysqli('localhost', 'u129225509_root', 'Root1ab2', 'u129225509_education_loan');
 
     if ($connect->connect_error) {
         die("Connection Failed: " . $connect->connect_error);
@@ -301,8 +312,8 @@
     </table>
 
     <!-- Footer -->
-    <footer style="text-align: center; padding: 20px; background-color: #567c8d; color: #fff; margin-top: 40px;">
-        <p>&copy; 2023 Education, Salary & Loan Data. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2025 Education, Salary & Loan Data. All rights reserved.</p>
     </footer>
 
     <!-- JavaScript for Loading Spinner -->
