@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+@extends('layout')
+@section('content')
+<h1>All students</h1>
+<ul>
+    @foreach ($students as $student)
+        <li>
+            {{ $student -> fname }} {{ $student -> lname }} |
+            <a href="{{ route('students.edit', $student -> id )}}">Edit</a>
+        </li>
+    @endforeach
+</ul>
+
+@endsection
+
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +26,4 @@
             {{$student -> fname}} <br>
     @endforeach
 </body>
-</html>
+</html> --}}

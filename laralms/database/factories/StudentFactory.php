@@ -19,7 +19,7 @@ class StudentFactory extends Factory
         return [
             'fname' => fake() -> firstName(),
             'lname' => fake() -> lastName(),
-            'email' => fake() -> email()
+            'email' => fake() -> unique() -> safeEmail()
         ];
     }
 }

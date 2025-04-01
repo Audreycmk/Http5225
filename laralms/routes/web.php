@@ -7,6 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('students', StudentController::class);
 // Route::get('/students', function () {
 //     return view('students.index');
 // });
@@ -14,5 +15,3 @@ Route::get('/', function () {
 // Route::get('/students', function () {
 //     return view('students.update');
 // });
-
-Route::resource('students', StudentController::class);
