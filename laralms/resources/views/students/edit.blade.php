@@ -10,8 +10,9 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('students.update', $student -> id) }}" method="PUT">
+    <form action="{{ route('students.update', $student -> id) }}" method="POST">
         {{ csrf_field() }}
+        @method('PUT')
     <label for="fname">First name</label>
     <input type="text" name="fname" placeholder="fname" value="{{ old('fname') ?? $student -> fname }}">
     <label for="lname">Last name</label>
