@@ -20,7 +20,7 @@
     <input type="email" name="email" placeholder="email" value="{{ old('email') }}">
     <button type="submit" value="Create">Add student</button>
 
-        <select name="" id="">
+        <select name="course" id="course">
             @foreach ($courses as $course )
                 <option value="">{{ $course -> name }}</option>
             @endforeach
